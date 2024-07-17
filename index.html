@@ -4,25 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Experience and Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@1,700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>My Experience</h1>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showHome()">Home</a></li>
+                    <li><a href="#" onclick="showSection('guides')">Návody</a></li>
+                    <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
+                    <li><a href="#" onclick="showSection('sexy')">Pro dospělé</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <section>
-            <h2>Work Experience</h2>
-            <p>Details about your work experience...</p>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h2>Hola! Vítejte na Pavlové stránce Algarrobo Costa.</h2>
+                <p>Na této stránce najdete všechny potřebné informace a zajímavé kulinářské tipy.</p>
+                <p>V záložce <u>"Pro dospělé"</u> jsme si pro Vás také připravili pikantní obsah pro nastartování večerů plné vášně.</p>
+            </div>
         </section>
-        <section>
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <section id="guides" class="container content-section">
+            <p>Tady budou návody ohledně ubytování a auta...</p>
+        </section>
+        <section id="food" class="container content-section">
+            <p>Tady budou tipy na restaurace...</p>
+        </section>
+        <section id="sexy" class="container content-section">
+            <p>Mmmmmm....</p>
+            <img src="images/pavel.png" alt="Vibrating Image" class="vibrate">
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <div class="container">
+            <p>&copy; 2024 Sponsored by Doblogoo</p>
+        </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

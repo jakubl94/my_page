@@ -1,0 +1,219 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(45deg, rgba(242, 231, 26, 0.881), rgba(238, 225, 47, 0.889), rgba(184, 187, 20, 0.7), rgba(176, 224, 230, 0.7), rgba(224, 238, 238, 0.7), rgba(245, 245, 245, 0.7), rgba(169, 169, 169, 0.7), rgba(112, 128, 144, 0.7));
+    background-size: 150% 150%;
+    animation: gradient 7s ease infinite;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    background: transparent;
+    padding: 1em 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 0.5em;
+}
+
+
+
+header nav ul {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    text-decoration: underline;
+}
+
+/* Hero section with gradient background */
+.hero {
+    text-align: center;
+    color: black;
+    padding: 10em 0 5em 0;
+}
+
+.hero h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3em;
+}
+
+.hero h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2em;
+    margin-top: 0.5em;
+}
+
+.hero p {
+    font-family: 'Roboto Mono', monospace;
+    margin: 1em 0;
+    font-size: 1.1em;
+}
+
+.hero h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.0em;
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    padding: 2em 0;
+}
+
+.content-section {
+    display: none;
+}
+
+#experience, #contact {
+    padding-top: 5em;  /* Adjust this value to move the content lower */
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+section p {
+    font-size: 1.1em;
+    margin: 1em 0;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 1em;
+}
+
+input, textarea {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+}
+
+button {
+    margin-top: 1em;
+    padding: 0.7em;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    background: transparent;
+    color: #000;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 0.5em 0;
+    }
+}
+/* CSS for the vibration effect */
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(2px, 2px); }
+}
+
+.vibrate {
+    display: block;
+    margin: 0 auto;
+    animation: vibrate 0.5s infinite;
+    max-width: 600px; /* Adjust as necessary */
+    max-height: 600px; /* Adjust as necessary */
+    background-color: transparent; /* Ensure the background is transparent */
+}
+/* Center-align text and image in the section */
+#sexy {
+    text-align: center;
+    padding-top: 1em; /* Add padding to adjust vertical positioning */
+}
+
+#sexy p {
+    margin-bottom: 0; /* Space between text and image */
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
