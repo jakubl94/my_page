@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="#" onclick="showHome()">Home</a></li>
                     <li><a href="#" onclick="showSection('guides')">Návody</a></li>
@@ -20,30 +20,160 @@
             </nav>
         </div>
     </header>
-    <main>
-        <section id="hero" class="hero">
-            <div class="container">
-                <h2>Hola! Vítejte na Pavlové stránce Algarrobo Costa.</h2>
-                <p>Na této stránce najdete všechny potřebné informace a zajímavé kulinářské tipy.</p>
-                <p>V záložce <u>"Pro dospělé"</u> jsme si pro Vás také připravili pikantní obsah pro nastartování večerů plné vášně.</p>
-            </div>
-        </section>
-        <section id="guides" class="container content-section">
-            <p>Tady budou návody ohledně ubytování a auta...</p>
-            <p><a href="files/La Almunia - instrukce.pdf" download>Stáhněte si PDF s návodem</a></p>
-        </section>
-        <section id="food" class="container content-section">
-            <p>Tady budou tipy na restaurace...</p>
-        </section>
-        <section id="sexy" class="container content-section">
-            <img src="images/pavel.png" alt="Vibrating Image" class="vibrate">
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Sponsored by Doblogoo</p>
-        </div>
-    </footer>
+    <div class="content-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sub-nav">
+                <ul>
+                    <li><a href="#parking">Parkovací stání</a></li>
+                    <li><a href="#wifi">Wifi</a></li>
+                    <li><a href="#house_rules">Pravidla domu</a></li>
+                    <li><a href="#pool">Venkovní bazén</a></li>
+                    <li><a href="#arrival">Při příjezdu</a></li>
+                    <li><a href="#equipment">Vybavení bytu</a></li>
+                    <li><a href="#leaving">Před odjezdem</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section id="hero" class="hero">
+                    <h2>Hola! Vítejte na Pavlové stránce Algarrobo Costa.</h2>
+                    <p>Na této stránce najdete všechny potřebné informace a zajímavé kulinářské tipy.</p>
+                    <p>V záložce <u>"Pro dospělé"</u> jsme si pro Vás také připravili pikantní obsah pro nastartování večerů plné vášně.</p>
+            </section>
+            <section id="guides" class="container content-section">
+                <div class="guide scroll-offset" id="parking">
+                    <h4>Parkovací stání</h4>
+                    <p>Parkovací stání má číslo 82, a je v pravé zadní sekci parkoviště v řadě VLEVO.
+                        Otevření vrat vjezdu do areálu je dálkovým ovladačem na klíčích od bytu 
+                        (brána se zavře sama pro projetí, není třeba zavírat).</p>
+                </div>
+                <div class="guide scroll-offset" id="wifi">
+                    <h4>Wifi</h4>
+                    <p>Zatím bohužel není k dispozici, lze však využít váš datový roaming v rámci EU, 
+                        signál je všude a data fungují. Případně ve všech restauracích v okolí je WIFI, a 
+                        obsluha vám ho ráda poskytne.</p>
+                </div> 
+                <div class="guide scroll-offset" id="house_rules">
+                    <h4>Pravidla domu</h4>
+                    <p>Prosím, dodržujte noční klid od 22:00 do 7:00.</p>
+                    <p><span style="color: red; font-weight: bold;">V bytě PROSÍM nekuřte. Pokud chcete kouřit, 
+                        prosím využijte prostor před domem, a nedopalky odstraňte.</span></p>
+                </div> 
+                <div class="guide scroll-offset" id="pool">
+                    <h4>Venkovní bazén</h4>
+                    <p>Je v provozu od 1.4. do 31.10. daného roku.
+                        Bazén je plně k dispozici v čase od 10.00 – 22.00 hodin.</p>
+                </div> 
+                <div class="guide scroll-offset" id="arrival">
+                    <h4>Při příjezdu</h4>
+                    <p>Nahoďte elektrické pojistky – je možno nahodit všechny, které byly shozené 
+                        (necháváme pouze v chodu lednici, ostatní prosím shoďte při odjezdu).
+                        Skříň s pojistkami se nachází vlevo vedle vstupu do bytu za bílými dvířky.</p>
+                     
+                    <!-- Your image -->
+                    <img class="zoomable" id="myImage" src="images/pojistky.png" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" id="imgModal">
+                        <div id="caption"></div>
+                    </div>
+
+                    <p>Zapojte bojler na teplou vodu – nachází se v kuchyni za dvoukřídlými dveřmi 
+                        vlevo vedle pračky. Prosím nezapojujte bojler do zásuvky na zdi (je nefunkční), 
+                        ale prostřednictvím prodlužovačky do zásuvky na protilehlé zdi.</p>
+
+                    <!-- Your image -->
+                    <img class="zoomable" id="myImage" src="images/zasuvka.png" style="width: 400px; height: 200px; margin-top: 10px;" onclick="openModal()">
+
+                    <p>Pokud by zapáchala teplá voda, odpusťte teplou vodu (voda může zapáchat, 
+                    pokud byl byt delší dobu neobýván, nebo nebyla vypuštěna horká voda při 
+                    minulém pobytu). Při odjezdu zcela vypusťte teplou vodu z bojleru – ideální 
+                    je vypnou bojler noc před odjezdem a vypustit zbytek).</p>
+                </div>
+                <div class="guide scroll-offset" id="equipment">
+                    <h4>Vybavení bytu</h4>
+                    <p>Byt je plně vybaven a veškeré vybavení a materiál je vám plně k dispozici.
+                        <ul>
+                            <li>povlečení a ručníky (domácí i plážové) jsou buď na postelích, věšáku, nebo ve skříni
+                                v pravé ložnici (podle potřeby je si je prosím vyžehlete – pokud zůstaly vyprány a 
+                                usušeny na věšáku návštěvníky před vámi)</li>
+                            <li>žehlicí prkno a sušák je na boku lednice v kuchyni</li>
+                            <li>pračka se nachází v kuchyni vlevo vedle elektrického bojleru, před použitím je třeba 
+                                pustit vodu (za pračkou je ventil, přívod vody do pračky je ten VPRAVO). Po každém 
+                                vyprání prosím přívod vody zase uzavřete. <span style="color: red; font-weight: bold;">NIKDY NEOTVÍREJTE PŘÍVOD VODY VLEVO – 
+                                NENÍ NAPOJEN A VODA BY TEKLA PŘÍMO NA PODLAHU</span></li>
+                        </ul></p>
+                        <img class="zoomable" id="myImage" src="images/uzavery.png" style="width: 200px; height: 300px; margin-top: 10px;" onclick="openModal()">
+                        <ul>
+                            <li> ve horních skříňkách je čaj, káva, cukr, dochucovadla, v lednici voda, cola, 
+                                pivo - vše v kuchyni je vám k dispozci</li>
+                            <li>v mrazáku je vždy bageta, nebo chleba pro případ nenadálého hladu například 
+                                při pozdním příjezdu</li>
+                        </ul>
+                        <p><span style="font-weight: bold;">Klimatizace</span></li></p>
+                        <ul>
+                            <li>v bytě je instalována klimatizace, která je vyvedena do obou ložnic a obývacího pokoje 
+                                (nelze regulovat, v jakých místnostech je klimatizováno)</li>
+                            <li>ovládání je přes panel umístěný na levé stěně v obýváku, klimatizaci zapnete tlačítkem 
+                                on/ off a následně šipkami nahoru a dolů volíte teplotu a intenzitu větrání</li>
+                        </ul>
+                        <p><span style="font-weight: bold;">Sonos</span></li></p>
+                        <ul>
+                            <li>reproduktor SONOS, zapnete hlavním vypínačem a podržením tlačítka Bluetooth připojení jej připojíte 
+                                ke svému mobilnímu telefonu (název zařízení, který se objeví ve bluetooth je
+                                HORNÍ KOUPELNA)</li>
+                        </ul>
+                        <img class="zoomable" id="myImage" src="images/sonos.png" style="width: 500px; height: 350px; margin-top: 10px;" onclick="openModal()">
+
+                </div>
+                <div class="guide scroll-offset" id="leaving">
+                    <h4>Před odjezdem</h4>
+                    <p><span style="font-weight: bold;">Koupelny/WC</span></li></p>
+                    <ul>
+                        <li>prosím ukliďte byt před vaším odjezdem, aby další návštěvníci našli 
+                            byl čistý a uklizený</li>
+                        <li>umyjte koupelny a wc</li>
+                    </ul>
+                    <p><span style="font-weight: bold;">Obývací pokoj/ložnice</span></li></p>
+                    <ul>
+                        <li>vyluxujte místnosti, případně vytřete podlahu</li>
+                        <li>sundejte povlečení a vyperte ho spolu s utěrkami a ručníky, nechte 
+                            ho sušit na sušáku uvnitř</li>
+                    </ul>
+                    <p><span style="font-weight: bold;">Kuchyně</span></li></p>
+                    <ul>
+                        <li>vyhoďte nezkonzumované a netrvanlivé věci z lednice, vysypte odpadkový koš</li>
+                        <li>umyjte nádobí, a vraťte ho na místo, ideálně vyndejte nádobí z myčky, pokud máte možnost</li>
+                    </ul> 
+                    <p><span style="font-weight: bold;">Balkon</span></li></p>
+                    <ul>
+                        <li>vytáhněte na balkoně markýzu</li>
+                        <li>židličky složte a opřete o stěnu vpravo</li>
+                        <li>podsedáky ze židliček dejte dovnitř</li>
+                        <li>stáhněte a zajistěte venkovní markýzu</li>
+                    </ul>  
+                    <p>POPELNICE JSOU UMÍSTĚNY NA ULICI PŘED AREÁLEM VPRAVO JE SMĚSNÝ ODPAD A VLEVO BLÍŽE K 
+                        PLÁŽI JSOU BAREVNÉ POPELNICE NA TŘÍDĚNÝ ODPAD.</p>  
+                    <p><span style="font-weight: bold;">DŮLEŽITÉ</span></li></p>
+                    <ul>
+                        <li>SPUSŤTE / ZATÁHNĚTE VENKOVNÍ ROLETY V OBOU LOŽNICÍCH I OBÝVACÍM POKOJI.</li>
+                        <li>Před odchodem prosím zkontrolujte, že všechna okna jsou zavřená a dveře zamčené.</li>
+                        <li>ZKONTROLUJTE ZDA JE ZAVŘENÝ VODOVODNÍ VENTIL U PRAČKY A VŠECHNY VODOVODNÍ BATERIE JSOU ZAVŘENÉ (VODU NEVYPÍNEJTE).</li>
+                    </ul>
+                    
+                    <p>Krásný pobyt!</p>
+                </div>                                             
+            </section>
+            <section id="food" class="container content-section">
+                <p>Tady budou tipy na restaurace...</p>
+            </section>
+            <section id="sexy" class="container content-section">
+                <img src="images/pavel.png" alt="Vibrating Image" class="vibrate">
+            </section>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

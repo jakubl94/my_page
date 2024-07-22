@@ -16,6 +16,7 @@ html, body {
 body {
     background: linear-gradient(45deg, rgba(242, 231, 26, 0.881), rgba(238, 225, 47, 0.889), rgba(184, 187, 20, 0.7), rgba(176, 224, 230, 0.7), rgba(224, 238, 238, 0.7), rgba(245, 245, 245, 0.7), rgba(169, 169, 169, 0.7), rgba(112, 128, 144, 0.7));
     background-size: 150% 150%;
+    background-attachment: fixed; /* Ensure background is fixed */
     animation: gradient 7s ease infinite;
     min-height: 100%;
     display: flex;
@@ -24,13 +25,13 @@ body {
 
 /* Container */
 .container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
 /* Header styles */
 header {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.941);;
     padding: 1em 0;
     position: fixed;
     top: 0;
@@ -47,8 +48,6 @@ header h1 {
     font-family: 'Libre Baskerville', serif;
     margin-bottom: 0.5em;
 }
-
-
 
 header nav ul {
     display: flex;
@@ -82,23 +81,27 @@ header nav ul li a.active {
 }
 
 .hero h2 {
+    text-align: center;
     font-family: 'Libre Baskerville', serif;
     font-size: 3em;
 }
 
 .hero h3 {
+    text-align: center;
     font-family: 'Libre Baskerville', serif;
     font-size: 2em;
     margin-top: 0.5em;
 }
 
 .hero p {
+    text-align: center;
     font-family: 'Roboto Mono', monospace;
     margin: 1em 0;
     font-size: 1.1em;
 }
 
 .hero h2 {
+    text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-size: 2.0em;
 }
@@ -107,6 +110,7 @@ header nav ul li a.active {
 main {
     flex: 1;
     padding: 2em 0;
+    margin-top: px; /* Adjust for fixed header */
 }
 
 .content-section {
@@ -126,49 +130,77 @@ section p {
     margin: 1em 0;
 }
 
-/* Form styles */
-form {
+/* Sidebar styles */
+.content-wrapper {
     display: flex;
-    flex-direction: column;
+    margin-top: 60px; /* Adjust for fixed header */
 }
 
-label {
-    margin-top: 1em;
+.sidebar {
+    width: 200px;
+    background: #f4f4f41f;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    display: none; /* Hide the sidebar by default */
+    position: fixed;
+    top: 60px; /* Adjust for fixed header */
+    left: 0;
+    height: auto; /* Fit height to content */
+    max-height: calc(100% - 60px); /* Ensure it doesn't exceed viewport */
+    overflow-y: auto;
 }
 
-input, textarea {
-    margin-top: 0.5em;
-    padding: 0.5em;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1em;
-}
-
-button {
-    margin-top: 1em;
-    padding: 0.7em;
-    background-color: #333;
-    color: white;
-    border: none;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-/* Footer styles */
-footer {
-    background: transparent;
-    color: #000;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-}
-
-footer p {
+.sub-nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
+}
+
+.sub-nav ul li {
+    margin-bottom: 10px;
+}
+
+.sub-nav ul li a {
+    text-decoration: none;
+    color: #000; /* Change text color to black */
+    display: block;
+    padding: 10px 0;
+}
+
+.sub-nav ul li a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-left: 220px; /* Adjust this to match the sidebar width */
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.content-section {
+    margin: 20px 0;
+}
+
+.content-section h3 {
+    margin-top: 0;
+}
+
+.vibrate {
+    animation: vibrate 0.3s linear infinite both;
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
 }
 
 /* Responsive design */
@@ -185,7 +217,32 @@ footer p {
     header nav ul li {
         margin: 0.5em 0;
     }
+
+    .sub-nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 10px;
+        box-shadow: none;
+        top: 0;
+        height: auto;
+    }
+
+    main {
+        margin-left: 0;
+        margin-top: 0; /* Adjust for fixed header */
+    }
 }
+
 /* CSS for the vibration effect */
 @keyframes vibrate {
     0% { transform: translate(0); }
@@ -203,6 +260,7 @@ footer p {
     max-height: 600px; /* Adjust as necessary */
     background-color: transparent; /* Ensure the background is transparent */
 }
+
 /* Center-align text and image in the section */
 #sexy {
     text-align: center;
@@ -212,8 +270,96 @@ footer p {
 #sexy p {
     margin-bottom: 0; /* Space between text and image */
 }
+
 @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .scroll-offset {
+    scroll-margin-top: 70px; /* Adjust this value based on your header height */
+}
+  
+
+h4 {
+    margin-bottom: 10px; /* Adjust the space below the heading if necessary */
+    font-size: 1.5em
+}
+
+ul {
+    padding-left: 20px; /* Indent the list */
+    margin-top: 0; /* Remove any top margin to ensure it appears directly under the paragraph */
+}
+
+li {
+    margin-bottom: 10px; /* Space between each list item */
+}
+
+p {
+    margin-bottom: 10px; /* Adjust the space below the paragraph */
 }
