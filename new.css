@@ -1,44 +1,35 @@
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-main {
-    flex: 1;
-    padding: 20px;
-}
-
-main.margin-left {
-    margin-left: 220px; /* Adjust this to match the sidebar width */
-}
-
-html, body {
-    height: 100%;
-    font-family: 'Roboto Mono', monospace;
-    color: #000;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background: linear-gradient(45deg, rgba(242, 231, 26, 0.881), rgba(238, 225, 47, 0.889), rgba(184, 187, 20, 0.7), rgba(176, 224, 230, 0.7), rgba(224, 238, 238, 0.7), rgba(245, 245, 245, 0.7), rgba(169, 169, 169, 0.7), rgba(112, 128, 144, 0.7));
-    background-size: 150% 150%;
-    background-attachment: fixed; /* Ensure background is fixed */
-    animation: gradient 7s ease infinite;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
-/* Container */
-.container {
+.page-container {
+    position: relative;
     width: 100%;
-    margin: 0 auto;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    overflow: hidden;
+}
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/algarrobo_beach.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    z-index: -1; /* Ensure the background is behind the content */
+}
+.content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the background */
+    padding: 20px;
+    color: #000;
 }
 
-/* Header styles */
+
 header {
     background: rgba(255, 255, 255, 0.941);;
     padding: 1em 0;
@@ -80,43 +71,6 @@ header nav ul li a {
 header nav ul li a:hover,
 header nav ul li a.active {
     text-decoration: underline;
-}
-
-/* Hero section with gradient background */
-.hero {
-    text-align: center;
-    color: black;
-    padding: 10em 0 5em 0;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-}
-.hero h2,
-.hero p {
-    color: #000; /* Full color text */
-    position: relative; /* Ensure z-index works */
-    z-index: 10; /* Ensure text is above the image */
-    background: rgba(255, 255, 255, 0.8); /* Optional: Add background to make text stand out */
-    display: inline-block; /* Ensure background only covers text */
-    padding: 10px; /* Optional: Add padding for better readability */
-    margin: 10px 0; /* Optional: Adjust margin as needed */
-}
-
-
-.content-section {
-    display: none;
-}
-
-section {
-    margin-bottom: 2em;
-}
-
-section p {
-    font-size: 1.1em;
-    margin: 1em 0;
 }
 
 /* Sidebar styles */
@@ -161,66 +115,6 @@ section p {
     text-decoration: underline; /* Optional hover effect */
 }
 
-.hero {
-    text-align: center;
-    padding: 50px 0;
-}
-
-.content-section {
-    margin: 20px 0;
-}
-
-.content-section h3 {
-    margin-top: 0;
-}
-
-.vibrate {
-    animation: vibrate 0.3s linear infinite both;
-}
-
-@keyframes vibrate {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
-}
-
-/* CSS for the vibration effect */
-@keyframes vibrate {
-    0% { transform: translate(0); }
-    25% { transform: translate(-2px, 2px); }
-    50% { transform: translate(2px, -2px); }
-    75% { transform: translate(-2px, -2px); }
-    100% { transform: translate(2px, 2px); }
-}
-
-.vibrate {
-    display: block;
-    margin: 0 auto;
-    animation: vibrate 0.5s infinite;
-    max-width: 600px; /* Adjust as necessary */
-    max-height: 600px; /* Adjust as necessary */
-    background-color: transparent; /* Ensure the background is transparent */
-}
-
-/* Center-align text and image in the section */
-#sexy {
-    text-align: center;
-    padding-top: 1em; /* Add padding to adjust vertical positioning */
-}
-
-#sexy p {
-    margin-bottom: 0; /* Space between text and image */
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -235,7 +129,7 @@ section p {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
   }
-  
+
   /* Modal Content (image) */
   .modal-content {
     margin: auto;
@@ -243,9 +137,8 @@ section p {
     width: 80%;
     max-width: 700px;
   }
-  
-  /* Caption of Modal Image */
-  #caption {
+   /* Caption of Modal Image */
+   #caption {
     margin: auto;
     display: block;
     width: 80%;

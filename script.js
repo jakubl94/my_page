@@ -85,8 +85,8 @@ var span = document.getElementsByClassName("close")[0];
 function closeModal() {
     modal.style.display = "none";
 }
-// Menu for the phone
+
 function toggleMenu() {
-    const menu = document.querySelector('.navbar-menu');
-    menu.classList.toggle('show');
+    const navbarMenu = document.querySelector('.navbar-menu');
+    navbarMenu.classList.toggle('show');
 }

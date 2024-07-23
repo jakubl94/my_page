@@ -1,4 +1,20 @@
-/*Phone - Responsive design */
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     .navbar-menu {
         display: none;
@@ -8,6 +24,7 @@
         position: absolute;
         top: 60px; /* Adjust based on your header height */
         left: 0;
+        z-index: 1000;
     }
     .navbar-menu.show {
         display: flex;
@@ -15,42 +32,22 @@
 
     .hamburger {
         display: flex;
+        position: absolute;
+        top: 1px;
+        left: 5px
     }
 
-    .container {
-        width: 90%;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul li {
-        margin: 0.5em 0;
-    }
-
-    .sub-nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        position: relative;
-        height: auto;
-        padding: 10px;
-        box-shadow: none;
-        top: 0;
-        height: auto;
-    }
-
-    main {
-        margin-left: 0;
-        margin-top: 0; /* Adjust for fixed header */
+    .navbar-menu {
+        top: 30px; /* Adjust this value to align with the hamburger */
+        right: 0; /* Align to the right */
+    }  
+    .hero {
+        padding: 5em 0;
+        background-attachment: scroll; /* Allow background to scroll on smaller screens */
+    }  
+    .hero h2,
+    .hero p {
+        background: rgba(255, 255, 255, 0.8); /* Make text background slightly transparent */
+        padding: 10px; /* Add some padding to the text background */
     }
 }

@@ -13,11 +13,17 @@
 <body>
     <header>
         <div class="container">
-            <nav class="main-nav">
-                <ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul class="navbar-menu">
                     <li><a href="#" onclick="showHome()">Home</a></li>
                     <li><a href="#" onclick="showSection('guides')">Návody</a></li>
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
+                    <li><a href="#" onclick="showSection('test')">Test</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,7 +47,7 @@
                     <h2>Hola! Vítejte na Pavlové stránce Algarrobo Costa.</h2>
                     <p>Na této stránce najdete všechny potřebné informace ohledně ubytování a také 
                         zajímavé tipy na restaurace či výlety.</p>
-                    <img id="full-width-image" src="images/algarrobo_beach.png" alt="Algarrobo Beach">
+                   <img id="full-width-image" src="images/algarrobo_beach.png" alt="Algarrobo Beach">
             </section>
             <section id="guides" class="container content-section">
                 <div class="guide scroll-offset" id="parking">
