@@ -6,6 +6,9 @@
     <title>Pavel Algarrobo Costa byt</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@1,700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="phone_styles.css">
+    <link rel="stylesheet" href="pictures_main_page_styles.css">
+
 </head>
 <body>
     <header>
@@ -15,7 +18,6 @@
                     <li><a href="#" onclick="showHome()">Home</a></li>
                     <li><a href="#" onclick="showSection('guides')">Návody</a></li>
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
-                    <li><a href="#" onclick="showSection('sexy')">Pro dospělé</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,11 +36,12 @@
                 </ul>
             </nav>
         </aside>
-        <main>
+        <main id="main-content" class="main-content">
             <section id="hero" class="hero">
                     <h2>Hola! Vítejte na Pavlové stránce Algarrobo Costa.</h2>
-                    <p>Na této stránce najdete všechny potřebné informace a zajímavé kulinářské tipy.</p>
-                    <p>V záložce <u>"Pro dospělé"</u> jsme si pro Vás také připravili pikantní obsah pro nastartování večerů plné vášně.</p>
+                    <p>Na této stránce najdete všechny potřebné informace ohledně ubytování a také 
+                        zajímavé tipy na restaurace či výlety.</p>
+                    <img id="full-width-image" src="images/algarrobo_beach.png" alt="Algarrobo Beach">
             </section>
             <section id="guides" class="container content-section">
                 <div class="guide scroll-offset" id="parking">
@@ -168,9 +171,6 @@
             </section>
             <section id="food" class="container content-section">
                 <p>Tady budou tipy na restaurace...</p>
-            </section>
-            <section id="sexy" class="container content-section">
-                <img src="images/pavel.png" alt="Vibrating Image" class="vibrate">
             </section>
         </main>
     </div>

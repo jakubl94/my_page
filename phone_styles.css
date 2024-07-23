@@ -1,0 +1,56 @@
+/*Phone - Responsive design */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.941);
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+    }
+    .navbar-menu.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .sub-nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 10px;
+        box-shadow: none;
+        top: 0;
+        height: auto;
+    }
+
+    main {
+        margin-left: 0;
+        margin-top: 0; /* Adjust for fixed header */
+    }
+}

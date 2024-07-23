@@ -32,6 +32,15 @@ function showSection(sectionId) {
         link.classList.remove('active');
     });
     document.querySelector(`header nav ul li a[onclick="showSection('${sectionId}')"]`).classList.add('active');
+
+    // Add or remove margin-left class based on the section
+    const mainContent = document.getElementById('main-content');
+    if (sectionId === 'guides') {
+        mainContent.classList.add('margin-left');
+    } else {
+        mainContent.classList.remove('margin-left');
+    }
+
 }
 
 function showHome() {
@@ -44,6 +53,10 @@ function showHome() {
     });
     document.querySelector('header nav ul li a[onclick="showHome()"]').classList.add('active');
     hideSidebar(); // Ensure the sidebar is hidden when going home
+
+    // Remove margin-left class
+    const mainContent = document.getElementById('main-content');
+    mainContent.classList.remove('margin-left');
 }
 // Modal picture - zoom
 // Get the modal
@@ -71,4 +84,9 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 function closeModal() {
     modal.style.display = "none";
+}
+// Menu for the phone
+function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    menu.classList.toggle('show');
 }

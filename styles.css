@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+main.margin-left {
+    margin-left: 220px; /* Adjust this to match the sidebar width */
+}
+
 html, body {
     height: 100%;
     font-family: 'Roboto Mono', monospace;
@@ -80,45 +89,25 @@ header nav ul li a.active {
     padding: 10em 0 5em 0;
 }
 
-.hero h2 {
-    text-align: center;
-    font-family: 'Libre Baskerville', serif;
-    font-size: 3em;
+.hero img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
 }
-
-.hero h3 {
-    text-align: center;
-    font-family: 'Libre Baskerville', serif;
-    font-size: 2em;
-    margin-top: 0.5em;
-}
-
+.hero h2,
 .hero p {
-    text-align: center;
-    font-family: 'Roboto Mono', monospace;
-    margin: 1em 0;
-    font-size: 1.1em;
+    color: #000; /* Full color text */
+    position: relative; /* Ensure z-index works */
+    z-index: 10; /* Ensure text is above the image */
+    background: rgba(255, 255, 255, 0.8); /* Optional: Add background to make text stand out */
+    display: inline-block; /* Ensure background only covers text */
+    padding: 10px; /* Optional: Add padding for better readability */
+    margin: 10px 0; /* Optional: Adjust margin as needed */
 }
 
-.hero h2 {
-    text-align: center;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 2.0em;
-}
-
-/* Main content styles */
-main {
-    flex: 1;
-    padding: 2em 0;
-    margin-top: px; /* Adjust for fixed header */
-}
 
 .content-section {
     display: none;
-}
-
-#experience, #contact {
-    padding-top: 5em;  /* Adjust this value to move the content lower */
 }
 
 section {
@@ -150,6 +139,7 @@ section p {
     overflow-y: auto;
 }
 
+
 .sub-nav ul {
     list-style: none;
     padding: 0;
@@ -169,12 +159,6 @@ section p {
 
 .sub-nav ul li a:hover {
     text-decoration: underline; /* Optional hover effect */
-}
-
-main {
-    flex: 1;
-    padding: 20px;
-    margin-left: 220px; /* Adjust this to match the sidebar width */
 }
 
 .hero {
@@ -201,46 +185,6 @@ main {
     60% { transform: translate(2px, 2px); }
     80% { transform: translate(2px, -2px); }
     100% { transform: translate(0); }
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul li {
-        margin: 0.5em 0;
-    }
-
-    .sub-nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        position: relative;
-        height: auto;
-        padding: 10px;
-        box-shadow: none;
-        top: 0;
-        height: auto;
-    }
-
-    main {
-        margin-left: 0;
-        margin-top: 0; /* Adjust for fixed header */
-    }
 }
 
 /* CSS for the vibration effect */
@@ -311,19 +255,8 @@ main {
     padding: 10px 0;
     height: 150px;
   }
-  
-  /* Add Animation - Zoom in the Modal */
-  .modal-content, #caption {  
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-  
-  @keyframes zoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-  }
-  
-  /* The Close Button */
+    
+  /* The Close Button for pictures */
   .close {
     position: absolute;
     top: 15px;
@@ -340,6 +273,17 @@ main {
     text-decoration: none;
     cursor: pointer;
   }
+/* Add Animation - Zoom in the Modal */
+    .modal-content, #caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    }
+    
+    @keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+    }
+  /*------------------------------*/
 
   .scroll-offset {
     scroll-margin-top: 70px; /* Adjust this value based on your header height */
