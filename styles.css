@@ -5,17 +5,13 @@
     box-sizing: border-box;
 }
 
-main {
-    flex: 1;
-    padding: 20px;
-}
-
 main.margin-left {
     margin-left: 220px; /* Adjust this to match the sidebar width */
 }
 
 html, body {
     height: 100%;
+    width: 100%;
     font-family: 'Roboto Mono', monospace;
     color: #000;
     margin: 0;
@@ -40,8 +36,8 @@ body {
 
 /* Header styles */
 header {
-    background: rgba(255, 255, 255, 0.941);;
-    padding: 1em 0;
+    background: rgba(255, 255, 255, 0.941);
+    padding: 1.2em 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -84,16 +80,23 @@ header nav ul li a.active {
 
 /* Hero section with gradient background */
 .hero {
+    position: relative;
     text-align: center;
-    color: black;
-    padding: 10em 0 5em 0;
+    padding: 0;
+    background-image: url('images/algarrobo_beach.png') ; /* Set the background image */
+    background-size: cover; /* Make sure the image covers the whole section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Make the hero section take full viewport height */
+    width: 100%; /* Make sure it takes full width */
+    text-align: center;
+    margin:0;
 }
 
 .hero img {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
+    display: none; /* Hide the img element */
 }
+
 .hero h2,
 .hero p {
     color: #000; /* Full color text */
@@ -161,10 +164,6 @@ section p {
     text-decoration: underline; /* Optional hover effect */
 }
 
-.hero {
-    text-align: center;
-    padding: 50px 0;
-}
 
 .content-section {
     margin: 20px 0;
@@ -178,50 +177,13 @@ section p {
     animation: vibrate 0.3s linear infinite both;
 }
 
-@keyframes vibrate {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
-}
-
-/* CSS for the vibration effect */
-@keyframes vibrate {
-    0% { transform: translate(0); }
-    25% { transform: translate(-2px, 2px); }
-    50% { transform: translate(2px, -2px); }
-    75% { transform: translate(-2px, -2px); }
-    100% { transform: translate(2px, 2px); }
-}
-
-.vibrate {
-    display: block;
-    margin: 0 auto;
-    animation: vibrate 0.5s infinite;
-    max-width: 600px; /* Adjust as necessary */
-    max-height: 600px; /* Adjust as necessary */
-    background-color: transparent; /* Ensure the background is transparent */
-}
-
-/* Center-align text and image in the section */
-#sexy {
-    text-align: center;
-    padding-top: 1em; /* Add padding to adjust vertical positioning */
-}
-
-#sexy p {
-    margin-bottom: 0; /* Space between text and image */
-}
-
 @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* The Modal (background) */
+/* The Modal (background) -- opening and closing pictures zoom */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
