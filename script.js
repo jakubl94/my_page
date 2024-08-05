@@ -89,6 +89,13 @@ function closeModal(modalId) {
     }
 }
 
+// Close modal on escape key press
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModal('myModal');
+    }
+});
+
 // Close password modal
 document.getElementById('closePasswordModal').onclick = function() {
     closeModal('passwordModal');
