@@ -23,6 +23,7 @@ function showSection(sectionId) {
     // Show or hide the sidebar based on the section
     if (sectionId === 'guides') {
         showSidebar();
+        showGuideSection('info');  // Ensure parking section is shown
     } else {
         hideSidebar();
     }
@@ -81,12 +82,73 @@ for (var i = 0; i < images.length; i++) {
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-function closeModal() {
-    modal.style.display = "none";
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
+
+// Close password modal
+document.getElementById('closePasswordModal').onclick = function() {
+    closeModal('passwordModal');
+};
+
+// Close image modal
+document.getElementById('closeImageModal').onclick = function() {
+    closeModal('myModal');
+};
 
 function toggleMenu() {
     const navbarMenu = document.querySelector('.navbar-menu');
     navbarMenu.classList.toggle('show');
+}
+
+function showGuideSection(sectionId) {
+    // Hide all guide sections
+    document.querySelectorAll('.guide').forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Show the selected guide section
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+// Show the first guide section (parking) by default when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    showGuideSection('info');
+});
+
+function promptPassword() {
+    document.getElementById('passwordModal').style.display = 'block';
+}
+
+function checkPassword() {
+    const enteredPassword = document.getElementById('passwordInput').value;
+    const hashedEnteredPassword = CryptoJS.SHA256(enteredPassword).toString();
+
+    // Replace this hash with the hash of your actual password
+    const correctPasswordHash = '38087dfc2d324c6b348ae9f2032f1894d965d714cd09c4067b062a3a789b874d';
+    console.log('Entered Password:', enteredPassword);
+    console.log('Hashed Entered Password:', hashedEnteredPassword);
+    if (hashedEnteredPassword === correctPasswordHash) {
+        showGuideSection('secret');
+        closeModal();
+    } else {
+        alert('Incorrect password. Please try again.');
+    }
+}
+
+function checkAddressPassword() {
+    const enteredPassword = document.getElementById('addressPassword').value;
+    const hashedEnteredPassword = CryptoJS.SHA256(enteredPassword).toString();
+
+    // Replace this hash with the hash of your actual password
+    const correctPasswordHash = '38087dfc2d324c6b348ae9f2032f1894d965d714cd09c4067b062a3a789b874d';
+
+    if (hashedEnteredPassword === correctPasswordHash) {
+        document.getElementById('addressContent').style.display = 'block';
+    } else {
+        alert('Incorrect password. Please try again.');
+    }
 }

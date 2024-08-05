@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="phone_styles.css">
     <link rel="stylesheet" href="pictures_main_page_styles.css">
-
 </head>
 <body>
     <header>
@@ -32,13 +31,11 @@
         <aside class="sidebar" id="sidebar">
             <nav class="sub-nav">
                 <ul>
-                    <li><a href="#parking">Parkovací stání</a></li>
-                    <li><a href="#wifi">Wifi</a></li>
-                    <li><a href="#house_rules">Pravidla domu</a></li>
-                    <li><a href="#pool">Venkovní bazén</a></li>
-                    <li><a href="#arrival">Při příjezdu</a></li>
-                    <li><a href="#equipment">Vybavení bytu</a></li>
-                    <li><a href="#leaving">Před odjezdem</a></li>
+                    <li><a href="#" onclick="showGuideSection('info')">Informace o bytu</a></li>
+                    <li><a href="#" onclick="showGuideSection('equipment')">Vybavení bytu</a></li>
+                    <li><a href="#" onclick="showGuideSection('arrival')">Při příjezdu</a></li>
+                    <li><a href="#" onclick="showGuideSection('house_rules')">Pravidla domu</a></li>
+                    <li><a href="#" onclick="showGuideSection('leaving')">Před odjezdem</a></li>
                 </ul>
             </nav>
         </aside>
@@ -49,56 +46,37 @@
                         zajímavé tipy na restaurace či výlety.</p>
             </section>
             <section id="guides" class="container content-section">
-                <div class="guide scroll-offset" id="parking">
+                <div class="guide scroll-offset" id="info">
+                    <h4>Adresa</h4>
+                    <input type="password" id="addressPassword" placeholder="Enter password">
+                    <button onclick="checkAddressPassword()">Submit</button>
+                    <div id="addressContent" style="display: none;">
+                        <p>Byt se nachází na adrese: AV.DE LA VEGA 6, ALGARROBO, 29750</p>
+                        <iframe
+                            width="500"
+                            height="300"
+                            style="border:0"
+                            loading="lazy"
+                            allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4&q=AV.DE+LA+VEGA+6,ALGARROBO,29750">
+                        </iframe>
+
+                        <p>Brána do komplexu, kde se nachází parkovací stání je na adrese výše a brána vypadá následovně. 
+                            Ovladač na bránu je na klíčích od bytu.</p>
+
+                        <img class="zoomable" id="myImage" src="images/entrance_gate.png" style="width: 500px; height: 300px; margin-top: 10px;" onclick="openModal()">
+                       
+                        <p>Byt se nachází v části 3 (PORTAL 3), ve 4. patře a je označen A (byt 4°A). 
+                        </p>
+                            
+                        <img class="zoomable" id="myImage" src="images/entrance_building.png" style="width: 500px; height: 300px; margin-top: 10px;" onclick="openModal()">
+
+                    </div>
+
                     <h4>Parkovací stání</h4>
                     <p>Parkovací stání má číslo 82, a je v pravé zadní sekci parkoviště v řadě VLEVO.
                         Otevření vrat vjezdu do areálu je dálkovým ovladačem na klíčích od bytu 
                         (brána se zavře sama pro projetí, není třeba zavírat).</p>
-                </div>
-                <div class="guide scroll-offset" id="wifi">
-                    <h4>Wifi</h4>
-                    <p>Zatím bohužel není k dispozici, lze však využít váš datový roaming v rámci EU, 
-                        signál je všude a data fungují. Případně ve všech restauracích v okolí je WIFI, a 
-                        obsluha vám ho ráda poskytne.</p>
-                </div> 
-                <div class="guide scroll-offset" id="house_rules">
-                    <h4>Pravidla domu</h4>
-                    <p>Prosím, dodržujte noční klid od 22:00 do 7:00.</p>
-                    <p><span style="color: red; font-weight: bold;">V bytě PROSÍM nekuřte. Pokud chcete kouřit, 
-                        prosím využijte prostor před domem, a nedopalky odstraňte.</span></p>
-                </div> 
-                <div class="guide scroll-offset" id="pool">
-                    <h4>Venkovní bazén</h4>
-                    <p>Je v provozu od 1.4. do 31.10. daného roku.
-                        Bazén je plně k dispozici v čase od 10.00 – 22.00 hodin.</p>
-                </div> 
-                <div class="guide scroll-offset" id="arrival">
-                    <h4>Při příjezdu</h4>
-                    <p>Nahoďte elektrické pojistky – je možno nahodit všechny, které byly shozené 
-                        (necháváme pouze v chodu lednici, ostatní prosím shoďte při odjezdu).
-                        Skříň s pojistkami se nachází vlevo vedle vstupu do bytu za bílými dvířky.</p>
-                     
-                    <!-- Your image -->
-                    <img class="zoomable" id="myImage" src="images/pojistky.png" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
-
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        <img class="modal-content" id="imgModal">
-                        <div id="caption"></div>
-                    </div>
-
-                    <p>Zapojte bojler na teplou vodu – nachází se v kuchyni za dvoukřídlými dveřmi 
-                        vlevo vedle pračky. Prosím nezapojujte bojler do zásuvky na zdi (je nefunkční), 
-                        ale prostřednictvím prodlužovačky do zásuvky na protilehlé zdi.</p>
-
-                    <!-- Your image -->
-                    <img class="zoomable" id="myImage" src="images/zasuvka.png" style="width: 400px; height: 200px; margin-top: 10px;" onclick="openModal()">
-
-                    <p>Pokud by zapáchala teplá voda, odpusťte teplou vodu (voda může zapáchat, 
-                    pokud byl byt delší dobu neobýván, nebo nebyla vypuštěna horká voda při 
-                    minulém pobytu). Při odjezdu zcela vypusťte teplou vodu z bojleru – ideální 
-                    je vypnou bojler noc před odjezdem a vypustit zbytek).</p>
                 </div>
                 <div class="guide scroll-offset" id="equipment">
                     <h4>Vybavení bytu</h4>
@@ -134,8 +112,42 @@
                                 HORNÍ KOUPELNA)</li>
                         </ul>
                         <img class="zoomable" id="myImage" src="images/sonos.png" style="width: 500px; height: 350px; margin-top: 10px;" onclick="openModal()">
+                        <p><span style="font-weight: bold;">Wifi</span></li></p>
+                        <ul>
+                            <li>Zatím bohužel není k dispozici, lze však využít váš datový roaming v rámci EU, 
+                                signál je všude a data fungují. Případně ve všech restauracích v okolí je WIFI, a 
+                                obsluha vám ho ráda poskytne.</li>
+                        </ul>
+                </div>        
+                <div class="guide scroll-offset" id="arrival">
+                    <p>Nahoďte elektrické pojistky – je možno nahodit všechny, které byly shozené 
+                        (necháváme pouze v chodu lednici, ostatní prosím shoďte při odjezdu).
+                        Skříň s pojistkami se nachází vlevo vedle vstupu do bytu za bílými dvířky.</p>
+                     
+                    <!-- Your image -->
+                    <img class="zoomable" id="myImage" src="images/pojistky.png" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
 
+                    <p>Zapojte bojler na teplou vodu – nachází se v kuchyni za dvoukřídlými dveřmi 
+                        vlevo vedle pračky. Prosím nezapojujte bojler do zásuvky na zdi (je nefunkční), 
+                        ale prostřednictvím prodlužovačky do zásuvky na protilehlé zdi.</p>
+
+                    <!-- Your image -->
+                    <img class="zoomable" id="myImage" src="images/zasuvka.png" style="width: 400px; height: 200px; margin-top: 10px;" onclick="openModal()">
+
+                    <p>Pokud by zapáchala teplá voda, odpusťte teplou vodu (voda může zapáchat, 
+                    pokud byl byt delší dobu neobýván, nebo nebyla vypuštěna horká voda při 
+                    minulém pobytu). Při odjezdu zcela vypusťte teplou vodu z bojleru – ideální 
+                    je vypnou bojler noc před odjezdem a vypustit zbytek).</p>
                 </div>
+                <div class="guide scroll-offset" id="house_rules">
+                    <h4>Pravidla domu</h4>
+                    <p>Prosím, dodržujte noční klid od 22:00 do 7:00.</p>
+                    <p><span style="color: red; font-weight: bold;">V bytě PROSÍM nekuřte. Pokud chcete kouřit, 
+                        prosím využijte prostor před domem, a nedopalky odstraňte.</span></p>
+                    <h4>Venkovní bazén</h4>
+                    <p>Je v provozu od 1.4. do 31.10. daného roku.
+                        Bazén je plně k dispozici v čase od 10.00 – 22.00 hodin.</p>                    
+                </div> 
                 <div class="guide scroll-offset" id="leaving">
                     <h4>Před odjezdem</h4>
                     <p><span style="font-weight: bold;">Koupelny/WC</span></li></p>
@@ -172,13 +184,28 @@
                     </ul>
                     
                     <p>Krásný pobyt!</p>
-                </div>                                             
+                </div>                                         
             </section>
             <section id="food" class="container content-section">
                 <p>Tady budou tipy na restaurace...</p>
             </section>
         </main>
-    </div>
+        <!-- The Modal -->
+        <div id="passwordModal" class="modal">
+            <div class="modal-content">
+                <span id="closePasswordModal" class="close">&times;</span>
+                <p>Enter Password:</p>
+                <input type="password" id="passwordInput">
+                <button onclick="checkPassword()">Submit</button>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <span id="closeImageModal" class="close">&times;</span>
+            <img class="modal-content" id="imgModal">
+            <div id="caption"></div>
+        </div>
+
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </body>
 </html>

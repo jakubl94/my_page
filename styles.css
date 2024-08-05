@@ -269,3 +269,9 @@ li {
 p {
     margin-bottom: 10px; /* Adjust the space below the paragraph */
 }
+
+.guide {
+    display: none;
+}
+
+
