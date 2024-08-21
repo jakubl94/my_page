@@ -36,22 +36,46 @@
         top: 1px;
         left: 5px
     }
-/*For side bar with text navigation */
-    .sidebar {
-        display: none;
-        position: absolute;
-        width: 200px;
-        top: 0;
-        left: 0;
-        height: 100%;
-        background: #f4f4f4;
+    .menu-icon {
+        position: fixed;
+        top: 50%; /* Position vertically centered */
+        left: -7%; /* Near the left edge */
         z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 40px; /* Larger width for better touch interaction */
+        height: 30%; /* Larger height for better touch interaction */
+        background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+        border-radius: 5px; /* Rounded corners */
+        transform: translateY(-50%); /* Center it vertically */
+        padding: 10px;
+    }
+
+    .menu-icon span {
+        width: 20px; /* Slightly smaller width for the hamburger lines */
+        height: 2px; /* Thin lines for the hamburger icon */
+        background-color: #fff; /* White color for the lines */
+        display: block;
+    }
+
+    /* Initially hide the sidebar */
+    .sidebar {
+        position: fixed;
+        top: 5;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #f4f4f4;
+        z-index: 999;
+        transition: left 0.3s ease;
     }
 
     .sidebar.show {
-        display: block;
-    }    
-
+        left: 0;
+    }
     .navbar-menu {
         top: 30px; /* Adjust this value to align with the hamburger */
         right: 0; /* Align to the right */
@@ -66,4 +90,25 @@
         background: rgba(255, 255, 255, 0.8); /* Ensure text is readable */
         padding: 10px;
     }
+
+    .hero h2 {
+        margin-top: 30px;
+    }
+
+    h4 {
+        margin-top: 40px;
+    }
+    
+    /* Align text to be on screen */
+    .content-section {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+    /* Remove left padding for text */
+    .content-wrapper {
+        padding-left: 0;
+    }
+    main.margin-left {
+        margin-left: 50px; /* Adjust this value for smaller screens */
+    } 
 }

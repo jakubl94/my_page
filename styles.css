@@ -105,7 +105,11 @@ header nav ul li a.active {
     background: rgba(255, 255, 255, 0.8); /* Optional: Add background to make text stand out */
     display: inline-block; /* Ensure background only covers text */
     padding: 10px; /* Optional: Add padding for better readability */
-    margin: 10px 0; /* Optional: Adjust margin as needed */
+    margin: 10px; /* Optional: Adjust margin as needed */
+}
+
+.hero h2 {
+    margin-top: 100px; /* Hide the img element */
 }
 
 
@@ -125,7 +129,6 @@ section p {
 /* Sidebar styles */
 .content-wrapper {
     display: flex;
-    margin-top: 60px; /* Adjust for fixed header */
 }
 
 .sidebar {
@@ -295,5 +298,3 @@ p {
 .gallery img:hover {
     transform: scale(1.05);
 }
-
-

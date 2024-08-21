@@ -22,7 +22,7 @@
                     <li><a href="#" onclick="showHome()">Home</a></li>
                     <li><a href="#" onclick="showSection('guides')">Návody</a></li>
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
-                    <li><a href="#" onclick="showSection('test')">Test</a></li>
+                    <li><a href="#" onclick="showSection('costs')">Poplatky</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,6 +47,11 @@
                         zajímavé tipy na restaurace či výlety.</p>
             </section>
             <section id="guides" class="container content-section">
+                <div class="menu-icon" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="guide scroll-offset" id="info">
                     <h4>Adresa</h4>
                     <input type="password" id="addressPassword" placeholder="Enter password">
@@ -198,8 +203,24 @@
                 </div>                                          
             </section>
             <section id="food" class="container content-section">
-                <p>Tady budou tipy na restaurace...</p>
+                <h4>Restaurace</h4>
+                <p>Skvělá restaurace, kde si můžete dát steak s vínem nebo koktejlem:</p>
+                <iframe
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://maps.app.goo.gl/d9fudWFyJ8uD35TC9?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4&q=AV.DE+LA+VEGA+6,ALGARROBO,29750">
+                </iframe>
             </section>
+            <section id="costs" class="container content-section">
+                <h4>Poplatky spojené s provozem bytu</h4>
+                <p>Poplatky na pokrytí provozu bytu a auta - elektřina, voda a služeby v domě činí 28 
+                    EUR na každý den pobytu.</p>
+
+                <img class="zoomable" id="myImage" src="images/payment.jpg" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
+            </section>            
         </main>
         <!-- The Modal -->
         <div id="passwordModal" class="modal">
@@ -215,7 +236,6 @@
             <img class="modal-content" id="imgModal">
             <div id="caption"></div>
         </div>
-
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </body>

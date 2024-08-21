@@ -36,8 +36,10 @@ function showSection(sectionId) {
 
     // Add or remove margin-left class based on the section
     const mainContent = document.getElementById('main-content');
-    if (sectionId === 'guides') {
+    if (sectionId === 'guides' && window.innerWidth >= 768) {
         mainContent.classList.add('margin-left');
+    //} if (window.innerWidth <= 768) {
+    //    mainContent.style.marginLeft = '10px';
     } else {
         mainContent.classList.remove('margin-left');
     }
@@ -111,6 +113,19 @@ function toggleMenu() {
     navbarMenu.classList.toggle('show');
 }
 
+// Function to hide the menu when a menu item is clicked
+function hideMenu() {
+    const navbarMenu = document.querySelector('.navbar-menu');
+    if (navbarMenu.classList.contains('show')) {
+        navbarMenu.classList.remove('show');
+    }
+}
+
+// Add event listeners to menu items
+document.querySelectorAll('.navbar-menu li a').forEach(item => {
+    item.addEventListener('click', hideMenu);
+});
+
 function showGuideSection(sectionId) {
     // Hide all guide sections
     document.querySelectorAll('.guide').forEach(section => {
@@ -158,4 +173,27 @@ function checkAddressPassword() {
     } else {
         alert('Incorrect password. Please try again.');
     }
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const menuIcon = document.querySelector('.menu-icon');
+
+    sidebar.classList.toggle('show'); // Toggle the 'show' class
+
+    // Hide the menu icon when the sidebar is visible
+    if (sidebar.classList.contains('show')) {
+        menuIcon.style.display = 'none';
+    } else {
+        menuIcon.style.display = 'flex';
+    }
+
+    // Ensure that the sidebar is hidden after selecting a menu item
+    const menuItems = document.querySelectorAll('.sidebar nav ul li a');
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            sidebar.classList.remove('show');
+            menuIcon.style.display = 'flex'; // Show the menu icon again
+        });
+    });
 }
