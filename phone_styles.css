@@ -113,6 +113,8 @@
     }
     #costs {
         padding-top: 0%;
+        max-width: 100%;
+        word-wrap: break-word;
     }
 
     #food {
@@ -126,7 +128,13 @@
         max-width: 100%; /* Ensure it doesn't exceed 100% of its container */
         height: auto; /* Automatically adjust height to maintain aspect ratio */
         aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio (you can adjust this) */
+    }    
+
+    #myImage {
+        margin-left: auto; /* Center the image horizontally */
+        margin-right: auto; /* Center the image horizontally */
+        padding-left: 0; /* Remove padding to avoid offset */
+        padding-right: 0; /* Remove padding to avoid offset */
     }
-    
     
 }

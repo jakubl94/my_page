@@ -320,13 +320,13 @@ p {
     padding-right: 2.5%;
 }
 #myImage {
-    width: 100%; /* The image will take up 100% of the container's width */
+    width: auto; /* The image will take up 100% of the container's width */
     height: auto; /* Height will automatically adjust to maintain the aspect ratio */
-    max-width: 500px; /* Maximum width of the image */
-    max-height: 400px; /* Maximum height of the image */
+    max-width: 300px; /* Maximum width of the image */
+    max-height: 200px; /* Maximum height of the image */
     display: block; /* Ensure the image is a block element */
-    padding-left: 2.5%;
-    padding-right: 2.5%
+    padding-left: 2%;
+    padding-right: 2%
 }
 
 
