@@ -37,7 +37,7 @@ body {
 /* Header styles */
 header {
     background: rgba(255, 255, 255, 0.941);
-    padding: 1.2em 0;
+    padding: 1.2em;
     position: fixed;
     top: 0;
     left: 0;
@@ -298,3 +298,35 @@ p {
 .gallery img:hover {
     transform: scale(1.05);
 }
+
+#costs {
+    position: relative;
+    padding-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+#guides {
+    position: relative;
+    padding-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+#food {
+    position: relative;
+    padding-top: 11%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+#myImage {
+    width: 100%; /* The image will take up 100% of the container's width */
+    height: auto; /* Height will automatically adjust to maintain the aspect ratio */
+    max-width: 500px; /* Maximum width of the image */
+    max-height: 400px; /* Maximum height of the image */
+    display: block; /* Ensure the image is a block element */
+    padding-left: 2.5%;
+    padding-right: 2.5%
+}
+
+

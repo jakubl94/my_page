@@ -47,11 +47,11 @@
                         zajímavé tipy na restaurace či výlety.</p>
             </section>
             <section id="guides" class="container content-section">
-                <div class="menu-icon" onclick="toggleSidebar()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                                    <div class="menu-icon" onclick="toggleSidebar()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 <div class="guide scroll-offset" id="info">
                     <h4>Adresa</h4>
                     <input type="password" id="addressPassword" placeholder="Enter password">
@@ -204,22 +204,46 @@
             </section>
             <section id="food" class="container content-section">
                 <h4>Restaurace</h4>
-                <p>Skvělá restaurace, kde si můžete dát steak s vínem nebo koktejlem:</p>
+                <p>Steakhaus:</p>
                 <iframe
+                    class="responsive-map"
                     width="500"
                     height="300"
                     style="border:0"
                     loading="lazy"
                     allowfullscreen
-                    src="https://maps.app.goo.gl/d9fudWFyJ8uD35TC9?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4&q=AV.DE+LA+VEGA+6,ALGARROBO,29750">
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4&q=Bar+Steakhaus+Kaj%C3%BCte,36.7465224,-4.0538165">
                 </iframe>
-            </section>
+
+                <p>Seafood a grill:</p>
+                <iframe
+                    class="responsive-map"
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4&q=Chringuito+Tropy%C3%BCte,36.7484986,-4.0630649">
+                </iframe>
+
+                <p>Typická španělská restaurace:</p>
+                <iframe
+                    class="responsive-map"
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4&q=El+Ruano+Restaurante+Asador,+PAGO+EL+RUANO,+Ctra.+Competa,+1,+29752+Sayalonga,+Málaga,+Spain%C3%BCte,36.8003082,-4.0096859">
+                </iframe>
+                </section>
             <section id="costs" class="container content-section">
                 <h4>Poplatky spojené s provozem bytu</h4>
                 <p>Poplatky na pokrytí provozu bytu a auta - elektřina, voda a služeby v domě činí 28 
                     EUR na každý den pobytu.</p>
 
                 <img class="zoomable" id="myImage" src="images/payment.jpg" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
+            
             </section>            
         </main>
         <!-- The Modal -->
