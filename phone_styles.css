@@ -21,6 +21,10 @@
         display: none;
     }
 
+    header {
+        padding: 4.5%;
+    }
+
     .small-screen-menu {
         display: none;
         width: 60%;
@@ -31,7 +35,7 @@
         margin-top: 4.5%;
         overflow-y: auto; /* Enable vertical scrolling */
         padding-right: 10px; /* Optional: Add padding to the right to prevent content from being cut off by the scrollbar */
-height: 100vh; /* Full height of the viewport */
+        height: 100vh; /* Full height of the viewport */
     }
     /* Base styles for the small-screen menu */
     .small-screen-menu ul {
