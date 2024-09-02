@@ -1,5 +1,5 @@
-informace o bytu - soucast bude parkovaci stani a kde to je
-vybaveni bytu - sloucit wifi
-pri prijezdu
-pravidlla domu - sloucit s bazenem
-pri odjezdu
+- udelat sidebar pro mobil jako na chat gpt
+- resize QR kod
+- pridat vibrace na vyjeti menu na mobilu
+- moznost swipovani v galerii
+- na hlavni strance menit fotky

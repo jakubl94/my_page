@@ -145,6 +145,17 @@ section p {
     overflow-y: auto;
 }
 
+/* Show the sidebar when the 'show' class is added */
+.sidebar.show {
+    left: 0;
+}
+
+/* Hide the submenu by default */
+.submenu {
+    display: none;
+    margin-left: 15px; /* Indent submenu items */
+}
+
 
 .sub-nav ul {
     list-style: none;
@@ -275,9 +286,7 @@ p {
     margin-bottom: 10px; /* Adjust the space below the paragraph */
 }
 
-.guide {
-    display: none;
-}
+
 
 .gallery {
     display: flex;
@@ -330,3 +339,12 @@ p {
 }
 
 
+/* Hide the small screen menu by default */
+.small-screen-menu {
+    display: none;
+}
+
+/* Display the large screen menu by default */
+.large-screen-menu {
+    display: block;
+}

@@ -17,10 +17,29 @@
                 <span></span>
                 <span></span>
             </div>
-            <nav>
-                <ul class="navbar-menu">
+            <!-- Menu for large screens -->
+            <nav class="navbar-menu large-screen-menu">
+                <ul>
                     <li><a href="#" onclick="showHome()">Home</a></li>
                     <li><a href="#" onclick="showSection('guides')">Návody</a></li>
+                    <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
+                    <li><a href="#" onclick="showSection('costs')">Poplatky</a></li>
+                </ul>
+            </nav>
+            <nav class="navbar-menu small-screen-menu">
+                <ul>
+                    <li><a href="#" onclick="showHome()">Home</a></li>
+                    <li>
+                        <span>Návody</span> <!-- Just a label, no onclick needed -->
+                        <ul id="guides-submenu" class="submenu">
+                            <li><a href="#" onclick="showSection('guides');showGuideSection('info')">Informace o bytu</a></li>
+                            <li><a href="#" onclick="showSection('guides');showGuideSection('equipment')">Vybavení bytu</a></li>
+                            <li><a href="#" onclick="showSection('guides');showGuideSection('arrival')">Při příjezdu</a></li>
+                            <li><a href="#" onclick="showSection('guides');showGuideSection('house_rules')">Pravidla domu</a></li>
+                            <li><a href="#" onclick="showSection('guides');showGuideSection('leaving')">Před odjezdem</a></li>
+                            <li><a href="#" onclick="showSection('guides');showGuideSection('galery')">Galerie</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
                     <li><a href="#" onclick="showSection('costs')">Poplatky</a></li>
                 </ul>
@@ -47,11 +66,6 @@
                         zajímavé tipy na restaurace či výlety.</p>
             </section>
             <section id="guides" class="container content-section">
-                                    <div class="menu-icon" onclick="toggleSidebar()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
                 <div class="guide scroll-offset" id="info">
                     <h4>Adresa</h4>
                     <input type="password" id="addressPassword" placeholder="Enter password">
@@ -59,6 +73,7 @@
                     <div id="addressContent" style="display: none;">
                         <p>Byt se nachází na adrese: AV.DE LA VEGA 6, ALGARROBO, 29750</p>
                         <iframe
+                            class="responsive-map"
                             width="500"
                             height="300"
                             style="border:0"
@@ -126,6 +141,7 @@
                         </ul>
                 </div>        
                 <div class="guide scroll-offset" id="arrival">
+                    <h4>Při příjezdu</h4>
                     <p>Nahoďte elektrické pojistky – je možno nahodit všechny, které byly shozené 
                         (necháváme pouze v chodu lednici, ostatní prosím shoďte při odjezdu).
                         Skříň s pojistkami se nachází vlevo vedle vstupu do bytu za bílými dvířky.</p>
@@ -238,7 +254,7 @@
                 <p>Poplatky na pokrytí provozu bytu a auta - elektřina, voda a služeby v domě činí 28 
                     EUR na každý den pobytu.</p>
 
-                <img class="zoomable" id="myImage" src="images/payment.jpg" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
+                <img class="zoomable specific-adjustment" id="myImage" src="images/payment.jpg" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
             
             </section>            
         </main>

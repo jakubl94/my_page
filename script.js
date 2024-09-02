@@ -9,6 +9,7 @@ function hideSidebar() {
 }
 
 function showSection(sectionId) {
+    console.log("showSection is being run");
     // Hide the hero section
     document.getElementById('hero').style.display = 'none';
 
@@ -19,6 +20,7 @@ function showSection(sectionId) {
 
     // Show the selected section
     document.getElementById(sectionId).style.display = 'block';
+    
 
     // Show or hide the sidebar based on the section
     if (sectionId === 'guides') {
@@ -28,7 +30,7 @@ function showSection(sectionId) {
         hideSidebar();
     }
 
-    // Update active link
+    // Update active link - underlines the section being used
     document.querySelectorAll('header nav ul li a').forEach(link => {
         link.classList.remove('active');
     });
@@ -38,8 +40,7 @@ function showSection(sectionId) {
     const mainContent = document.getElementById('main-content');
     if (sectionId === 'guides' && window.innerWidth >= 768) {
         mainContent.classList.add('margin-left');
-    //} if (window.innerWidth <= 768) {
-    //    mainContent.style.marginLeft = '10px';
+        console.log("Adding padding for bigger screens");
     } else {
         mainContent.classList.remove('margin-left');
     }
@@ -109,7 +110,7 @@ document.getElementById('closeImageModal').onclick = function() {
 };
 
 function toggleMenu() {
-    const navbarMenu = document.querySelector('.navbar-menu');
+    const navbarMenu = document.querySelector('.small-screen-menu');
     navbarMenu.classList.toggle('show');
 }
 
@@ -127,7 +128,12 @@ document.querySelectorAll('.navbar-menu li a').forEach(item => {
 });
 
 function showGuideSection(sectionId) {
-    // Hide all guide sections
+    if (window.innerWidth < 768){
+        hideSidebar();
+    }
+    console.log(sectionId);
+
+    // Hide all guide sections so nothing overlaps from previous selection
     document.querySelectorAll('.guide').forEach(section => {
         section.style.display = 'none';
     });
@@ -175,25 +181,15 @@ function checkAddressPassword() {
     }
 }
 
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const menuIcon = document.querySelector('.menu-icon');
-
-    sidebar.classList.toggle('show'); // Toggle the 'show' class
-
-    // Hide the menu icon when the sidebar is visible
-    if (sidebar.classList.contains('show')) {
-        menuIcon.style.display = 'none';
-    } else {
-        menuIcon.style.display = 'flex';
-    }
-
-    // Ensure that the sidebar is hidden after selecting a menu item
-    const menuItems = document.querySelectorAll('.sidebar nav ul li a');
-    menuItems.forEach(item => {
-        item.addEventListener('click', () => {
-            sidebar.classList.remove('show');
-            menuIcon.style.display = 'flex'; // Show the menu icon again
-        });
-    });
+// Function to hide the small-screen menu
+function hideSmallScreenMenu() {
+    const navbarMenu = document.querySelector('.navbar-menu.small-screen-menu');
+    navbarMenu.classList.remove('show');
 }
+
+// Add event listeners to all small-screen menu links
+document.querySelectorAll('.small-screen-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        hideSmallScreenMenu();
+    });
+});

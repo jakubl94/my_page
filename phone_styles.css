@@ -16,18 +16,55 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .navbar-menu {
+    /* Hide the large screen menu */
+    .large-screen-menu {
         display: none;
-        flex-direction: column;
-        width: 100%;
-        background: rgba(158, 142, 142, 0.845);
+    }
+
+    .small-screen-menu {
+        display: none;
+        width: 60%;
+        background: rgba(240, 231, 231, 0.979);
         position: absolute;
         left: 0;
         z-index: 1000;
-        margin-top: 2%;
+        margin-top: 4.5%;
+        overflow-y: auto; /* Enable vertical scrolling */
+        padding-right: 10px; /* Optional: Add padding to the right to prevent content from being cut off by the scrollbar */
+height: 100vh; /* Full height of the viewport */
     }
-    .navbar-menu.show {
+    /* Base styles for the small-screen menu */
+    .small-screen-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: block;
+    }
+
+    .small-screen-menu li {
+        padding: 10px 15px;
+        display: block; /* Ensure each menu item is a block element */
+        flex-direction: column;
+    }
+
+    .small-screen-menu a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+    }
+    .small-screen-menu.show {
         display: flex;
+    }
+
+    /* Ensure the submenu is always visible on small screens */
+    .submenu {
+        display: block; /* Always display the submenu */
+        padding-left: 15px; /* Indent submenu items */
+    }   
+    /* Remove underline from submenu items */
+    .submenu li a {
+        text-decoration: none;
+        border-bottom: none; /* Remove any border-bottom if previously added */
     }
 
     .hamburger {
@@ -36,50 +73,17 @@
         top: 2%;
         left: 2%;
     }
-    .menu-icon {
-        position: fixed;
-        top: 50%; /* Position vertically centered */
-        left: -7%; /* Near the left edge */
-        z-index: 1000;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 40px; /* Larger width for better touch interaction */
-        height: 30%; /* Larger height for better touch interaction */
-        background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
-        border-radius: 5px; /* Rounded corners */
-        transform: translateY(-50%); /* Center it vertically */
-        padding: 10px;
+    /* Remove the side bar from small*/
+    .sub-nav {
+        display: none;
+    }
+    #sidebar {
+        display: none;
+    }
+    #sidebar.sidebar{
+        display: none;
     }
 
-    .menu-icon span {
-        width: 20px; /* Slightly smaller width for the hamburger lines */
-        height: 2px; /* Thin lines for the hamburger icon */
-        background-color: #fff; /* White color for the lines */
-        display: block;
-    }
-
-    /* Initially hide the sidebar */
-    .sidebar {
-        position: fixed;
-        top: 5;
-        left: -250px;
-        width: 250px;
-        height: 80%;
-        background-color: #f4f4f4;
-        z-index: 999;
-        transition: left 0.3s ease;
-    }
-
-    .sidebar.show {
-        left: 0;
-    }
-    .navbar-menu {
-        top: 30px; /* Adjust this value to align with the hamburger */
-        right: 0; /* Align to the right */
-    }  
     .hero {
         padding: 5em 1em; /* Adjust padding for smaller screens */
         height: auto; /* Allow the height to adjust based on content */
@@ -135,6 +139,20 @@
         margin-right: auto; /* Center the image horizontally */
         padding-left: 0; /* Remove padding to avoid offset */
         padding-right: 0; /* Remove padding to avoid offset */
+        max-width: 300px; /* Maximum width of the image */
+        max-height: 200px; /* Maximum height of the image */   
     }
+
+    #myImage.specific-adjustment {
+        width: 100%; /* Full width of the container */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 400px; /* Optional: Set a maximum width */
+        margin-left: auto; /* Center the image horizontally */
+        margin-right: auto; /* Center the image horizontally */
+        padding-left: 0; /* Remove padding to avoid offset */
+        padding-right: 0; /* Remove padding to avoid offset */
+        object-fit: contain; /* Ensure the image fits within the container without distorting */
+    }    
+    
     
 }
