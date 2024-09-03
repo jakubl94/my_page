@@ -328,6 +328,12 @@ p {
     padding-left: 2.5%;
     padding-right: 2.5%;
 }
+#shopping {
+    position: relative;
+    padding-top: 11%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
 #myImage {
     width: auto; /* The image will take up 100% of the container's width */
     height: auto; /* Height will automatically adjust to maintain the aspect ratio */
