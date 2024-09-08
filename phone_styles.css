@@ -1,21 +1,23 @@
 
+/* Responsive design */
+@media (max-width: 768px) {
+
 /* Hamburger menu styles */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    width: 7.0vw; /* Ensure the width is always 4.5% of the viewport width */
+    right: 4.5%; /* Keep it aligned within the header's padding */
+
 }
 
 .hamburger span {
-    width: 25px;
-    height: 3px;
     background: #000;
-    margin: 4px 0;
     transition: 0.4s;
+    height: 0.70vw; /* Keep height proportional to the hamburger width */
+    margin: 0.85vw 0; /* Adjust the margin to maintain spacing */
 }
-
-/* Responsive design */
-@media (max-width: 768px) {
     /* Hide the large screen menu */
     .large-screen-menu {
         display: none;
@@ -27,7 +29,7 @@
 
     .small-screen-menu {
         display: none;
-        width: 60%;
+        width:70%;
         background: rgba(240, 231, 231, 0.979);
         position: absolute;
         left: 0;
@@ -36,6 +38,7 @@
         overflow-y: auto; /* Enable vertical scrolling */
         padding-right: 10px; /* Optional: Add padding to the right to prevent content from being cut off by the scrollbar */
         height: 100vh; /* Full height of the viewport */
+        padding-bottom: 20px; /* Add padding at the bottom to ensure the last item is not cut off */
     }
     /* Base styles for the small-screen menu */
     .small-screen-menu ul {
@@ -58,6 +61,8 @@
     }
     .small-screen-menu.show {
         display: flex;
+        flex-direction: column; /* Ensure the menu items stack vertically */
+        overflow-y: auto; /* Ensure the entire menu is scrollable */
     }
 
     /* Ensure the submenu is always visible on small screens */
@@ -134,6 +139,9 @@
     #guides {
         padding-top: 0%;
     }
+    #gallery {
+        padding-top: 5%;
+    }
     .responsive-map {
         width: 100%; /* Full width */
         max-width: 100%; /* Ensure it doesn't exceed 100% of its container */
@@ -153,13 +161,18 @@
     #myImage.specific-adjustment {
         width: 100%; /* Full width of the container */
         height: auto; /* Maintain aspect ratio */
-        max-width: 400px; /* Optional: Set a maximum width */
+        max-width: 100%; /* Optional: Set a maximum width */
         margin-left: auto; /* Center the image horizontally */
         margin-right: auto; /* Center the image horizontally */
         padding-left: 0; /* Remove padding to avoid offset */
         padding-right: 0; /* Remove padding to avoid offset */
         object-fit: contain; /* Ensure the image fits within the container without distorting */
-    }    
+    }  
+    
+    .gallery img {
+        flex: 1 1 calc(50% - 10px); /* Adjust 33.333% based on how many images you want per row */
+        max-width: calc(50% - 10px);
+    }
     
     
 }

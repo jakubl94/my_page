@@ -37,7 +37,7 @@ body {
 /* Header styles */
 header {
     background: rgba(255, 255, 255, 0.941);
-    padding: 1.2em;
+    padding: 1.1em;
     position: fixed;
     top: 0;
     left: 0;
@@ -46,6 +46,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    white-space: nowrap; /* Prevent the text from breaking into multiple lines */
+
 }
 
 header h1 {
@@ -292,11 +294,12 @@ p {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .gallery img {
-    width: 200px;
+    flex: 1 1 calc(20% - 10px); /* Adjust 33.333% based on how many images you want per row */
+    max-width: calc(20% - 10px);
     height: auto;
     object-fit: cover;
     border-radius: 5px;
@@ -331,6 +334,12 @@ p {
 #shopping {
     position: relative;
     padding-top: 11%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+#gallery {
+    position: relative;
+    padding-top: 5%;
     padding-left: 2.5%;
     padding-right: 2.5%;
 }

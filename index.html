@@ -25,6 +25,7 @@
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
                     <li><a href="#" onclick="showSection('shopping')">Potraviny a nákupy</a></li>
                     <li><a href="#" onclick="showSection('costs')">Poplatky</a></li>
+                    <li><a href="#" onclick="showSection('gallery')">Galerie</a></li>
                 </ul>
             </nav>
             <nav class="navbar-menu small-screen-menu">
@@ -38,12 +39,12 @@
                             <li><a href="#" onclick="showSection('guides');showGuideSection('arrival')">Při příjezdu</a></li>
                             <li><a href="#" onclick="showSection('guides');showGuideSection('house_rules')">Pravidla domu</a></li>
                             <li><a href="#" onclick="showSection('guides');showGuideSection('leaving')">Před odjezdem</a></li>
-                            <li><a href="#" onclick="showSection('guides');showGuideSection('galery')">Galerie</a></li>
                         </ul>
                     </li>
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
                     <li><a href="#" onclick="showSection('shopping')">Potraviny a nákupy</a></li>
                     <li><a href="#" onclick="showSection('costs')">Poplatky</a></li>
+                    <li><a href="#" onclick="showSection('gallery')">Galerie</a></li>
                 </ul>
             </nav>
         </div>
@@ -57,7 +58,6 @@
                     <li><a href="#" onclick="showGuideSection('arrival')">Při příjezdu</a></li>
                     <li><a href="#" onclick="showGuideSection('house_rules')">Pravidla domu</a></li>
                     <li><a href="#" onclick="showGuideSection('leaving')">Před odjezdem</a></li>
-                    <li><a href="#" onclick="showGuideSection('galery')">Galerie</a></li>
                 </ul>
             </nav>
         </aside>
@@ -204,17 +204,7 @@
                     </ul>
                     
                     <p>Krásný pobyt!</p>
-                </div>
-                <div class="guide scroll-offset" id="galery">
-                    <h4>Ochutnávka</h4>  
-                    <div class="gallery">
-                        <img class="zoomable" src="images/byt_view.png" alt="Výhled" onclick="openModal()">
-                        <img class="zoomable" src="images/byt_gauc.png" alt="Obývák 1" onclick="openModal()">
-                        <img class="zoomable" src="images/byt_view.png" alt="Obývák 2" onclick="openModal()">
-                        <img class="zoomable" src="images/byt_obyvak_fuj.png" alt="Obývák 3" onclick="openModal()">
-                        <img class="zoomable" src="images/byt_obyvak_noc.png" alt="Obývák 4" onclick="openModal()">
-                    </div>              
-                </div>                                          
+                </div>                                       
             </section>
             <section id="food" class="container content-section">
                 <h4>Restaurace</h4>
@@ -286,14 +276,22 @@
                     allowfullscreen
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33860.980760921426!2d-4.133229603841995!3d36.75544663265409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72470f825db02f%3A0x83b181fe26941bb4!2sShopping%20Centre%20El%20Ingenio!5e0!3m2!1scs!2suk!4v1725353466489!5m2!1scs!2suk?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4">
                 </iframe>
-            </section>               
+            </section> 
             <section id="costs" class="container content-section">                
                 <h4>Poplatky spojené s provozem bytu</h4>
                 <p>Poplatky na pokrytí provozu bytu a auta - elektřina, voda a služeby v domě činí 28 
                     EUR na každý den pobytu.</p>
 
                 <img class="zoomable specific-adjustment" id="myImage" src="images/payment.jpg" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
-            
+            </section>               
+            <section id="gallery" class="container content-section">                
+                    <div class="gallery">
+                        <img class="zoomable" src="images/byt_view.png" alt="Výhled" onclick="openModal()">
+                        <img class="zoomable" src="images/byt_gauc.png" alt="Obývák 1" onclick="openModal()">
+                        <img class="zoomable" src="images/byt_view.png" alt="Obývák 2" onclick="openModal()">
+                        <img class="zoomable" src="images/byt_obyvak_fuj.png" alt="Obývák 3" onclick="openModal()">
+                        <img class="zoomable" src="images/byt_obyvak_noc.png" alt="Obývák 4" onclick="openModal()">
+                    </div>              
             </section>            
         </main>
         <!-- The Modal -->
