@@ -142,6 +142,9 @@
     #gallery {
         padding-top: 5%;
     }
+    #reservation {
+        padding-top: 0%;
+    }
     .responsive-map {
         width: 100%; /* Full width */
         max-width: 100%; /* Ensure it doesn't exceed 100% of its container */

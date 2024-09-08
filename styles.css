@@ -343,6 +343,12 @@ p {
     padding-left: 2.5%;
     padding-right: 2.5%;
 }
+#reservation {
+    position: relative;
+    padding-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
 #myImage {
     width: auto; /* The image will take up 100% of the container's width */
     height: auto; /* Height will automatically adjust to maintain the aspect ratio */
@@ -362,4 +368,27 @@ p {
 /* Display the large screen menu by default */
 .large-screen-menu {
     display: block;
+}
+
+.calendar-container {
+    position: relative;
+    padding-bottom: 75%; /* This keeps a 4:3 aspect ratio for larger screens */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #f9f9f9;
+}
+
+.calendar-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.calendar-scroll {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    width: 100%; /* Make sure the container takes full width */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
