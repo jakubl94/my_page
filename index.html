@@ -22,7 +22,8 @@
                     <li><a href="#" onclick="showHome()">Home</a></li>
                     <li><a href="#" onclick="showSection('guides')">Návody</a></li>
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
-                    <li><a href="#" onclick="showSection('shopping')">Potraviny a nákupy</a></li>
+                    <li><a href="#" onclick="showSection('shopping')">Nákupy</a></li>
+                    <li><a href="#" onclick="showSection('trips')">Výlety</a></li>
                     <li><a href="#" onclick="showSection('costs')">Poplatky</a></li>
                     <li><a href="#" onclick="showSection('reservation')">Rezervace</a></li>
                     <li><a href="#" onclick="showSection('gallery')">Galerie</a></li>
@@ -42,7 +43,8 @@
                         </ul>
                     </li>
                     <li><a href="#" onclick="showSection('food')">Restaurace a kavárny</a></li>
-                    <li><a href="#" onclick="showSection('shopping')">Potraviny a nákupy</a></li>
+                    <li><a href="#" onclick="showSection('shopping')">Nákupy</a></li>
+                    <li><a href="#" onclick="showSection('trips')">Výlety</a></li>
                     <li><a href="#" onclick="showSection('costs')">Poplatky</a></li>
                     <li><a href="#" onclick="showSection('reservation')">Rezervace</a></li>
                     <li><a href="#" onclick="showSection('gallery')">Galerie</a></li>
@@ -142,6 +144,21 @@
                                 signál je všude a data fungují. Případně ve všech restauracích v okolí je WIFI, a 
                                 obsluha vám ho ráda poskytne.</li>
                         </ul>
+                        <p><span style="font-weight: bold;">Markýza na balkoně a rolety</span></li></p>
+                        <ul>
+                            <li>Na balkoně je k dispozici přední a horní markýza. Přední markýza se ovládá 
+                                tyčí, která se prostrčí v očku v pravém horním rohu a mechanicky se spustí.
+                                Pak je třeba markýzu zajistit pomocí úchytů, které jsou v každém rohu (možné dvě polohy - 
+                                plně spuštěná a částečné spuštěná).
+                                Horní markýza se spouští pomocí provazu za který se zatáhne a poté se zajistí na háček na stěně. 
+                                K dispzici jsou také rolety v obou ložnicích, které se ovládají manuálně. Roleta v obývacím pokoji
+                                je elektrická, ovládání v pravo u vstupu na balkon.</li>
+                        </ul>
+                        <img class="zoomable" id="myImage" src="images/markyza_tyc.jpg" style="width: 500px; height: 350px; margin-top: 10px;" onclick="openModal()">
+                        <img class="zoomable" id="myImage" src="images/markyza_dole.jpg" style="width: 500px; height: 350px; margin-top: 10px;" onclick="openModal()">
+                        <img class="zoomable" id="myImage" src="images/lano_markyza.jpg" style="width: 500px; height: 350px; margin-top: 10px;" onclick="openModal()">
+
+
                 </div>        
                 <div class="guide scroll-offset" id="arrival">
                     <h4>Při příjezdu</h4>
@@ -278,10 +295,71 @@
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33860.980760921426!2d-4.133229603841995!3d36.75544663265409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72470f825db02f%3A0x83b181fe26941bb4!2sShopping%20Centre%20El%20Ingenio!5e0!3m2!1scs!2suk!4v1725353466489!5m2!1scs!2suk?key=AIzaSyBLX2f-Dkd106Nlf0kKNmLIeATdQdfyxR4">
                 </iframe>
             </section> 
+            <section id="trips" class="container content-section">
+                <h4>Nejbližší okolí:</h4>
+
+                <h3>Nerja:</h3>
+                <iframe
+                    class="responsive-map"
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25573.26336550554!2d-3.8945833398737344!3d36.75478125892926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72251226dc9a3d%3A0xe8a542008b9b37b8!2zMjk3ODAgTmVyamEsIFByb3ZpbmNpZSBNw6FsYWdhLCDFoHBhbsSbbHNrbw!5e0!3m2!1scs!2scz!4v1728312055211!5m2!1scs!2scz">
+                </iframe>
+
+                <h3>Frigiliana:</h3>
+                <iframe
+                    class="responsive-map"
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6390.388652510862!2d-3.902209405344182!3d36.789890931072854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7224b09423f143%3A0x907177a88feb8605!2s29788%20Frigiliana%2C%20Provincie%20M%C3%A1laga%2C%20%C5%A0pan%C4%9Blsko!5e0!3m2!1scs!2scz!4v1728312168522!5m2!1scs!2scz">
+                </iframe>
+
+                <h3>Cómpeta:</h3>
+                <iframe
+                    class="responsive-map"
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6386.75440348714!2d-3.9801757553370947!3d36.833441326136644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd723c3a62b48f5b%3A0x99aa899e7e79b10!2zMjk3NTQgQ8OzbXBldGEsIFByb3ZpbmNpZSBNw6FsYWdhLCDFoHBhbsSbbHNrbw!5e0!3m2!1scs!2scz!4v1728312290544!5m2!1scs!2scz">
+                </iframe>
+
+                <h4>Celodenní výlety:</h4>
+                <h3>Caminito Del Rey:</h3>
+                <p>Je nutná rezervace předem: <a href="https://www.caminitodelrey.info/en/tickets/buy" target="_blank">odkaz zde</a>.</p>
+                <iframe
+                    class="responsive-map"
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12758.46758896936!2d-4.800101788670529!3d36.923423209588634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72be9311fa8f01%3A0x599abbe8aafbd4b8!2sCaminito%20del%20Rey%20.%20North%20Access!5e0!3m2!1scs!2scz!4v1728312439820!5m2!1scs!2scz">
+                </iframe>
+
+                <h3>Granada - komplex Alhambra:</h3>
+                <p>Je taktéž nutná rezervace předem: <a href="https://tickets.alhambra-patronato.es/en/" target="_blank">odkaz zde</a>.</p>
+                <iframe
+                    class="responsive-map"
+                    width="500"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.0163473939165!2d-3.5930122145065746!3d37.17608247460646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fcb7977fb93b%3A0x808dd1ef1221a27f!2sAlhambra!5e0!3m2!1scs!2scz!4v1728312820421!5m2!1scs!2scz">
+                </iframe>
+            </section> 
             <section id="costs" class="container content-section">                
                 <h4>Poplatky spojené s provozem bytu</h4>
-                <p>Poplatky na pokrytí provozu bytu a auta - elektřina, voda a služeby v domě činí 28 
-                    EUR na každý den pobytu.</p>
+                <p>Poplatky spojené s provozem bytu - elektřina, voda, služby v domě plus provoz auta činí 800 
+                    CZK na den pobytu.</p>
 
                 <img class="zoomable specific-adjustment" id="myImage" src="images/payment.jpg" style="width: 400px; height: 300px; margin-top: 10px;" onclick="openModal()">
             </section>               
@@ -301,7 +379,6 @@
                 <div class="calendar-container">
                     <iframe id="calendarFrame" src="https://calendar.google.com/calendar/embed?src=dee265867014a43afdaffde2ec84dd0d08f71874a170a55623561b681d6eb489%40group.calendar.google.com&ctz=Europe%2FPrague&mode=month" style="border: 0" frameborder="0" scrolling="no"></iframe>
                 </div>
-
         </section>                        
         </main>
         <!-- The Modal -->

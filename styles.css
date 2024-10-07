@@ -337,6 +337,12 @@ p {
     padding-left: 2.5%;
     padding-right: 2.5%;
 }
+#trips {
+    position: relative;
+    padding-top: 11%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
 #gallery {
     position: relative;
     padding-top: 5%;
@@ -358,8 +364,6 @@ p {
     padding-left: 2%;
     padding-right: 2%
 }
-
-
 /* Hide the small screen menu by default */
 .small-screen-menu {
     display: none;
@@ -386,9 +390,4 @@ p {
     width: 100%;
     height: 100%;
     border: 0;
-}
-.calendar-scroll {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    width: 100%; /* Make sure the container takes full width */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
